@@ -2,8 +2,8 @@
   "name": "teste-ativa",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:silvajeferson82/teste-ativa.git",
-  "author": "silvajeferson82 <silvajeferson82@hotmail.com>",
+  "repository": "git@github.com:silvajeferson82/teste-tiva.git",
+  "author": "silvajeferson82 <jefersonsilva.contato@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec sucrase-node src/server.js"
@@ -12,7 +12,8 @@
     "express": "^4.17.1",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.8.0"
+    "sequelize": "^6.8.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
