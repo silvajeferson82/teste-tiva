@@ -1,14 +1,15 @@
 import Sequelize from "sequelize";
 import dbConfig from "../config/database";
 
-import Users from '../models/User';
+import User from '../models/User';
 
-const models = [ Users ];
+const models = [ User ];
 
 class Connection {
-  constructor(){
+  constructor() {
     this.init();
   }
+
   init(){
     this.Connection = new Sequelize(dbConfig);
 
@@ -16,4 +17,4 @@ class Connection {
   }
 }
 
-export default new Connection();
+export { Connection };
