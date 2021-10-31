@@ -1,8 +1,14 @@
-import { Model, DataTypes} from 'sequelize';
+import { Model, DataTypes, Sequelize } from 'sequelize';
 
 class User extends Model {
   static init(sequelize) {
     super.init({
+      id: {
+        type: DataTypes.UUIDV4,
+        allowNull: false,
+        defaultValue: sequelize.fn('uuid_generate_v4'),
+        primaryKey: true,
+      },
       name: {
         type:DataTypes.STRING,
         allowNull: false,
@@ -18,7 +24,8 @@ class User extends Model {
       password: {
         type:DataTypes.STRING,
         allowNull: false,
-      }
+      },
+      senha: Sequelize.VIRTUAL,
     },
     {
       sequelize,
@@ -26,6 +33,6 @@ class User extends Model {
     });
     return this;
   }
-}
+};
 
-export {User};
+export default User;

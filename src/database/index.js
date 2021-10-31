@@ -1,9 +1,9 @@
-import Sequelize from "sequelize";
-import dbConfig from "../config/database";
+import Sequelize from 'sequelize';
+import dbConfig from '../config/database';
 
-import User from '../models/User';
+import User from '../app/models/Users/entities/User';
 
-const models = [ User ];
+const models = [ User, ];
 
 class Connection {
   constructor() {
@@ -13,7 +13,12 @@ class Connection {
   init(){
     this.Connection = new Sequelize(dbConfig);
 
-    models.forEach(model => model.init(this.Connection));
+    // models.forEach(model => model.init(this.Connection));
+    models
+      .map((model) => model.init(this.connection))
+      .map(
+        (model) => model.associate && model.associate(this.connection.models)
+      );
   }
 }
 

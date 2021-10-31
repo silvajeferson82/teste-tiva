@@ -1,12 +1,11 @@
-'use strict';
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('users', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable('users', {
       id: {
         type: Sequelize.UUID,
         primaryKey: true,
-        defaultValue: Sequelize.UUIDV4,
+        defaultValue: Sequelize.fn('uuid_generate_v4'),
         allownull: false,
       },
       name: {
@@ -19,7 +18,7 @@ module.exports = {
       },
       admin :{
         type: Sequelize.BOOLEAN,
-        allownull: false,
+        allownull: true,
       },
       password: {
         type: Sequelize.STRING,
@@ -27,12 +26,12 @@ module.exports = {
       },
       created_at: {
         type: Sequelize.DATE,
-        allownull: false,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
       updated_at: {
         type: Sequelize.DATE,
-        allownull: false,
-      }
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
     });
 
   },
