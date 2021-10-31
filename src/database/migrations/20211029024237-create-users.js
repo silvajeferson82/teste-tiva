@@ -1,11 +1,10 @@
-
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('users', {
+    return queryInterface.createTable("users", {
       id: {
         type: Sequelize.UUID,
         primaryKey: true,
-        defaultValue: Sequelize.fn('uuid_generate_v4'),
+        defaultValue: Sequelize.fn("uuid_generate_v4"),
         allownull: false,
       },
       name: {
@@ -16,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING,
         allownull: false,
       },
-      admin :{
+      admin: {
         type: Sequelize.BOOLEAN,
         allownull: true,
       },
@@ -26,14 +25,13 @@ module.exports = {
       },
       created_at: {
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       updated_at: {
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
     });
-
   },
 
   down: async (queryInterface, Sequelize) => {

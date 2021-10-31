@@ -1,19 +1,18 @@
 import Sequelize from 'sequelize';
-import dbConfig from '../config/database';
 
-import User from '../app/models/Users/entities/User';
+import databaseConfig from '../config/database';
+import Users from '../app/models/Users/entities/Users';
 
-const models = [ User, ];
+const models = [Users];
 
-class Connection {
+class Database {
   constructor() {
     this.init();
   }
 
-  init(){
-    this.Connection = new Sequelize(dbConfig);
+  init() {
+    this.connection = new Sequelize(databaseConfig);
 
-    // models.forEach(model => model.init(this.Connection));
     models
       .map((model) => model.init(this.connection))
       .map(
@@ -22,4 +21,4 @@ class Connection {
   }
 }
 
-export { Connection };
+export default new Database();

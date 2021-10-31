@@ -1,19 +1,7 @@
-import app from './app';
-import 'dotenv/config';
+import app from "./app";
 
-// import express, { Router } from "express";
-// import routes from './routes/app.routes';
-// import cors from 'cors';
+require("dotenv/config");
 
-// import './database';
-
-
-// const routes = new Router();
-// const app = express()
-// app.use(express.json());
-// app.use(routes);
-
-app.listen(process.env.PORT, () => {
-  console.log(`Projeto ${process.env.PROJECT_NAME} rodando em ${process.env.PORT}`)
+app.listen(process.env.PORT_SERVER, () => {
+  console.log(`App rodando em ${process.env.PORT_SERVER}`);
 });
-
