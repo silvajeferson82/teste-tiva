@@ -1,10 +1,9 @@
-import Users from "../entities/Users";
-import { hash } from "bcryptjs";
+import UserService from "../services/UserService";
 
 class UsersController {
   async index(_, res) {
     try {
-      const users = await Users.findAll();
+      const users = await UserService.list();
 
       return res.json(users);
     } catch (err) {
@@ -16,12 +15,11 @@ class UsersController {
     const { name, email, admin, password } = req.body;
 
     try {
-      const passwordHash = await hash(password, 8);
-      const user = await Users.create({
+      const user = await UserService.execute({
         name,
         email,
         admin,
-        password: passwordHash,
+        password,
       });
 
       return res.json(user);
