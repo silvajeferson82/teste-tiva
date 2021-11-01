@@ -1,4 +1,5 @@
 import Users from "../entities/Users";
+import { hash } from "bcryptjs";
 
 class UsersController {
   async index(_, res) {
@@ -7,20 +8,24 @@ class UsersController {
 
       return res.json(users);
     } catch (err) {
-      console.log("ERRo 2", err);
       return res.status(500).json({ Error: err.message });
     }
   }
 
   async store(req, res) {
     const { name, email, admin, password } = req.body;
-    console.log("CONTROLLER", req.body);
-    try {
-      const newUser = await Users.create({ name, email, admin, password, });
 
-      return res.json({ newUser });
+    try {
+      const passwordHash = await hash(password, 8);
+      const user = await Users.create({
+        name,
+        email,
+        admin,
+        password: passwordHash,
+      });
+
+      return res.json(user);
     } catch (err) {
-      console.log("ERRo 2", err);
       return res.status(500).json({ Error: err.message });
     }
   }

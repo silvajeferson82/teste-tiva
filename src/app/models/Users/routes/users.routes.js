@@ -1,5 +1,6 @@
-import { Router } from 'express';
-import UsersControllers from '../controllers/UsersController';
+import { Router } from "express";
+// eslint-disable-next-line import/extensions
+import UsersControllers from "../controllers/UsersController";
 
 const usersRouter = Router();
 
@@ -20,7 +21,7 @@ const usersRouter = Router();
  *        '200':
  *          description: A successful response
  */
-usersRouter.get('/list', UsersControllers.index);
+usersRouter.get("/list", UsersControllers.index);
 /**
  * @swagger
  *  /users/create:
@@ -38,22 +39,13 @@ usersRouter.get('/list', UsersControllers.index);
  *            properties:
  *              name:
  *                type: string,
- *                example: Everton Oliveira
- *              phone:
- *                type: string,
- *                example: '981501208'
- *              document:
- *                type: string,
- *                example: '4565456465444'
- *              type_company:
- *                type: string,
- *                example: Dentista
- *              date_of_birth:
- *                type: string,
- *                example: '1987-11-25'
+ *                example: Jhon Doe
  *              email:
  *                type: string
  *                example: e@gmail.com
+ *              admin:
+ *                type: boolean,
+ *                example: true
  *              password:
  *                type: string
  *                example: '12345'
@@ -61,6 +53,6 @@ usersRouter.get('/list', UsersControllers.index);
  *        '200':
  *          description: A successful response
  */
-usersRouter.post('/create', UsersControllers.store);
+usersRouter.post("/create", UsersControllers.store);
 
 export default usersRouter;

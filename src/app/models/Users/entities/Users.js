@@ -1,9 +1,11 @@
 import Sequelize, { Model, DataTypes } from "sequelize";
-// import bcrypt from 'bcryptjs';
+import bcrypt from "bcryptjs";
+import { user } from "pg/lib/defaults";
 
 class Users extends Model {
   static init(sequelize) {
-    super.init({
+    super.init(
+      {
         id: {
           type: DataTypes.UUIDV4,
           allowNull: false,
@@ -26,7 +28,7 @@ class Users extends Model {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        senha: Sequelize.VIRTUAL,
+        // password: Sequelize.VIRTUAL,
       },
       {
         sequelize,

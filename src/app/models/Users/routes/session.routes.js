@@ -1,5 +1,5 @@
-import { Router } from 'express';
-import SessionController from '../controllers/SessionController';
+import { Router } from "express";
+import AuthenticateUserController from "../controllers/AuthenticateUserController";
 
 const sessionRouter = Router();
 
@@ -34,6 +34,6 @@ const sessionRouter = Router();
  *        '200':
  *          description: A successful response
  */
-sessionRouter.post('/', SessionController.store);
+sessionRouter.post("/", AuthenticateUserController.handle);
 
 export default sessionRouter;
