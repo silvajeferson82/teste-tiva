@@ -30,6 +30,7 @@ class Professionals extends Model {
           type: DataTypes.STRING,
           allownull: true,
           defaultValue: null,
+        },
       },
       {
         sequelize,

@@ -2,7 +2,7 @@ import Sequelize from "sequelize";
 
 import databaseConfig from "../config/database";
 import Users from "../app/models/Users/entities/Users";
-import Professionals from "../app/models/profissionals/entities/Professionals";
+import Professionals from "../app/models/professionals/entities/Professionals";
 
 const models = [Users, Professionals];
 
