@@ -1,6 +1,6 @@
 import Sequelize, { Model, DataTypes } from "sequelize";
 
-class Users extends Model {
+class Professionals extends Model {
   static init(sequelize) {
     super.init(
       {
@@ -14,31 +14,30 @@ class Users extends Model {
           type: DataTypes.STRING,
           allowNull: false,
         },
+        description: {
+          type: DataTypes.STRING,
+          allownull: false,
+        },
         email: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allownull: false,
         },
         contato: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allownull: false,
         },
-        admin: {
-          type: DataTypes.BOOLEAN,
-          allowNull: false,
-        },
-        password: {
+        foto: {
           type: DataTypes.STRING,
-          allowNull: false,
-        },
-        // password: Sequelize.VIRTUAL,
+          allownull: true,
+          defaultValue: null,
       },
       {
         sequelize,
-        tableName: "users",
+        tableName: "profissional",
       },
     );
     return this;
   }
 }
 
-export default Users;
+export default Professionals;

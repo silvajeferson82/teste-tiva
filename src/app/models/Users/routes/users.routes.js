@@ -43,6 +43,9 @@ usersRouter.get("/list", UsersControllers.index);
  *              email:
  *                type: string
  *                example: e@gmail.com
+ *              contato:
+ *                type: string
+ *                example: 91999999999
  *              admin:
  *                type: boolean,
  *                example: true

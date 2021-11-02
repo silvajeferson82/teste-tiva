@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("users", {
+    return queryInterface.createTable("profissional", {
       id: {
         type: Sequelize.UUID,
         primaryKey: true,
@@ -8,6 +8,10 @@ module.exports = {
         allownull: false,
       },
       name: {
+        type: Sequelize.STRING,
+        allownull: false,
+      },
+      description: {
         type: Sequelize.STRING,
         allownull: false,
       },
@@ -19,13 +23,10 @@ module.exports = {
         type: Sequelize.STRING,
         allownull: false,
       },
-      admin: {
-        type: Sequelize.BOOLEAN,
-        allownull: true,
-      },
-      password: {
+      foto: {
         type: Sequelize.STRING,
-        allownull: false,
+        allownull: true,
+        defaultValue: null,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -39,6 +40,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("users");
+    await queryInterface.dropTable("profissional");
   },
 };

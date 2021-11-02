@@ -12,12 +12,13 @@ class UsersController {
   }
 
   async store(req, res) {
-    const { name, email, admin, password } = req.body;
+    const { name, email, contato, admin, password } = req.body;
 
     try {
       const user = await UserService.execute({
         name,
         email,
+        contato,
         admin,
         password,
       });

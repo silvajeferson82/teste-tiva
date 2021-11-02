@@ -1,31 +1,34 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("users", {
+  up: async (queryInterface, Sequelize) => {
+    return queryInterface.createTable("schedule", {
       id: {
         type: Sequelize.UUID,
         primaryKey: true,
         defaultValue: Sequelize.fn("uuid_generate_v4"),
         allownull: false,
       },
-      name: {
+      data_inicio: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      data_fim: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      hora_inicio: {
         type: Sequelize.STRING,
         allownull: false,
       },
-      email: {
+      hora_fim: {
         type: Sequelize.STRING,
         allownull: false,
       },
-      contato: {
-        type: Sequelize.STRING,
-        allownull: false,
-      },
-      admin: {
-        type: Sequelize.BOOLEAN,
-        allownull: true,
-      },
-      password: {
-        type: Sequelize.STRING,
-        allownull: false,
+      profissional_id: {
+        type: Sequelize.UUID,
+        allowNull: false,
+        references: { model: "profissional", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",
       },
       created_at: {
         type: Sequelize.DATE,
@@ -39,6 +42,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("users");
+    await queryInterface.dropTable("schedule");
   },
 };

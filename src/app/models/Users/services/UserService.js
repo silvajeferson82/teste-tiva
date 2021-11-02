@@ -7,7 +7,7 @@ class UserService {
     return users;
   }
 
-  async execute({ name, email, admin, password }) {
+  async execute({ name, email, contato, admin, password }) {
     const userAlreadExists = await Users.findOne({
       where: { email },
     });
@@ -20,6 +20,7 @@ class UserService {
     const user = await Users.create({
       name,
       email,
+      contato,
       admin,
       password: passwordHash,
     });
