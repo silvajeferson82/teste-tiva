@@ -29,7 +29,7 @@ class Professionals extends Model {
         foto: {
           type: DataTypes.STRING,
           allownull: true,
-          defaultValue: null,
+          defaultValue: "NULL",
         },
       },
       {

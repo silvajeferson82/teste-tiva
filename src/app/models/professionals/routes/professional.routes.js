@@ -8,7 +8,7 @@ const professionalRoutes = Router();
 
 professionalRoutes.post(
   "/create",
-  upload.single("image"),
+  upload.single("foto"),
   ProfessonalController.create,
 );
 
