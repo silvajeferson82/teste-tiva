@@ -23,6 +23,16 @@ class AddressesServices {
 
     return address;
   }
+
+  async list({ professional_id }) {
+    const addresses = await Addresses.findAll({ where: { professional_id } });
+
+    if (!addresses) {
+      throw new Error("Sem registro de endereços");
+    }
+
+    return addresses;
+  }
 }
 
 export default new AddressesServices();

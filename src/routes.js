@@ -8,6 +8,7 @@ import sessionRouter from "./app/models/Users/routes/session.routes";
 import usersRouter from "./app/models/Users/routes/users.routes";
 import professionalRouter from "./app/models/professionals/routes/professional.routes";
 import addressesRouter from "./app/models/Addressses/routes/addresses.routes";
+import scheduleRouter from "./app/models/Schedules/routes/schedules.routes";
 
 const routes = new Router();
 
@@ -43,5 +44,6 @@ routes.use("/login", sessionRouter);
 routes.use("/users", usersRouter);
 routes.use("/professional", professionalRouter);
 routes.use("/addresses", addressesRouter);
+routes.use("/schedule", scheduleRouter);
 
 export default routes;

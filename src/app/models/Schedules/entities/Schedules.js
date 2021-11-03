@@ -11,11 +11,11 @@ class Schedules extends Model {
           primaryKey: true,
         },
         data_inicio: {
-          type: DataTypes.DATEONLY,
+          type: DataTypes.DATE,
           allowNull: false,
         },
         data_fim: {
-          type: DataTypes.DATEONLY,
+          type: DataTypes.DATE,
           allownull: false,
         },
         hora_inicio: {
