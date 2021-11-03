@@ -23,12 +23,12 @@ module.exports = {
         type: Sequelize.STRING,
         allownull: false,
       },
-      profissional_id: {
+      professional_id: {
         type: Sequelize.UUID,
         allowNull: false,
-        references: { model: "profissional", key: "id" },
+        references: { model: "professionals", key: "id" },
         onUpdate: "CASCADE",
-        onDelete: "SET NULL",
+        onDelete: "CASCADE",
       },
       created_at: {
         type: Sequelize.DATE,

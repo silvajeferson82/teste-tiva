@@ -2,7 +2,7 @@ import AddressesServices from "../services/AddressesServices";
 
 class AddressesControler {
   async create(req, res) {
-    const { profissional_id } = req.params;
+    const { professional_id } = req.params;
     const { cep, estado, cidade, bairro, rua, numero } = req.body;
     console.log(req.body, req.params);
     try {
@@ -13,7 +13,7 @@ class AddressesControler {
         bairro,
         rua,
         numero,
-        profissional_id,
+        professional_id,
       });
 
       return res.json(address);

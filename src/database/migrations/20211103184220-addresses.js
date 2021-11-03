@@ -10,45 +10,33 @@ module.exports = {
       cep: {
         type: Sequelize.STRING,
         allownull: false,
-        onUpdate: "CASCADE",
-        onDelete: "SET NULL",
       },
       estado: {
         type: Sequelize.STRING,
         allownull: false,
-        onUpdate: "CASCADE",
-        onDelete: "SET NULL",
       },
       cidade: {
         type: Sequelize.STRING,
         allownull: false,
-        onUpdate: "CASCADE",
-        onDelete: "SET NULL",
       },
       bairro: {
         type: Sequelize.STRING,
         allownull: false,
-        onUpdate: "CASCADE",
-        onDelete: "SET NULL",
       },
       rua: {
         type: Sequelize.STRING,
         allownull: false,
-        onUpdate: "CASCADE",
-        onDelete: "SET NULL",
       },
       numero: {
         type: Sequelize.STRING,
         allownull: false,
-        onUpdate: "CASCADE",
-        onDelete: "SET NULL",
       },
-      profissional_id: {
+      professional_id: {
         type: Sequelize.UUID,
         allowNull: false,
-        references: { model: "profissional", key: "id" },
+        references: { model: "professionals", key: "id" },
         onUpdate: "CASCADE",
-        onDelete: "SET NULL",
+        onDelete: "CASCADE",
       },
       created_at: {
         type: Sequelize.DATE,

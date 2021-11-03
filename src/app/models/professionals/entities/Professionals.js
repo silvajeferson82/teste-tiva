@@ -34,7 +34,7 @@ class Professionals extends Model {
       },
       {
         sequelize,
-        tableName: "profissional",
+        tableName: "professionals",
       },
     );
     return this;

@@ -1,6 +1,7 @@
 import { Router } from "express";
 // eslint-disable-next-line import/extensions
 import UsersControllers from "../controllers/UsersController";
+import authMiddleware from "../../../../middlewares/auth";
 
 const usersRouter = Router();
 
@@ -21,6 +22,7 @@ const usersRouter = Router();
  *        '200':
  *          description: A successful response
  */
+usersRouter.use(authMiddleware);
 usersRouter.get("/list", UsersControllers.index);
 /**
  * @swagger
@@ -56,6 +58,7 @@ usersRouter.get("/list", UsersControllers.index);
  *        '200':
  *          description: A successful response
  */
+usersRouter.use(authMiddleware);
 usersRouter.post("/create", UsersControllers.store);
 
 export default usersRouter;

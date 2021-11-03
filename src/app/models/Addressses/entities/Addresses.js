@@ -34,7 +34,7 @@ class Addresses extends Model {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        profissional_id: {
+        professional_id: {
           type: DataTypes.UUIDV4,
           allowNull: false,
         },

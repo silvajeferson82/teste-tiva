@@ -13,6 +13,10 @@ class AuthenticateUserService {
       throw new Error("Email/Password Incorrect");
     }
 
+    if (!user.admin) {
+      throw new Error("User not allowed");
+    }
+
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
