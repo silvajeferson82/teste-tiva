@@ -2,11 +2,13 @@ import ProfessionalServices from "../services/ProfessionalServices";
 class ProfessionalControllers {
   async create(req, res) {
     const img = req.file;
-    let foto;
+    let foto = "";
     if (img) {
       foto = img.filename;
     }
-    foto = "NULL";
+    if (!img) {
+      foto = "NULL";
+    }
     const { name, description, email, contato } = req.body;
     try {
       const professional = await ProfessionalServices.execute({
