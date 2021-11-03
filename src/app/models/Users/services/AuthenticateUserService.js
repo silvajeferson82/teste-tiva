@@ -23,11 +23,11 @@ class AuthenticateUserService {
       {
         email: user.email,
       },
-      "90880e6e12ef332464804bbc9cd31e5a",
+      auth.secret,
       {
         subject: user.id,
-        expiresIn: "1d",
-      }
+        expiresIn: auth.expiresIn,
+      },
     );
 
     return token;

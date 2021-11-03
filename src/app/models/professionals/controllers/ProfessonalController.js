@@ -23,19 +23,6 @@ class ProfessionalControllers {
     } catch (error) {
       return res.status(500).json({ Error: error.message });
     }
-
-    // if (!foto) {
-    //   console.log(foto);
-    //   return res.json({
-    //     error: true,
-    //     message: "Sucess...",
-    //   });
-    // }
-
-    // return res.json({
-    //   error: false,
-    //   message: "Fail...",
-    // });
   }
 }
 

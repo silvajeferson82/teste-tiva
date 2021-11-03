@@ -1,4 +1,4 @@
 export default {
-  secret: "12345",
+  secret: "90880e6e12ef332464804bbc9cd31e5a",
   expiresIn: "1d",
 };
